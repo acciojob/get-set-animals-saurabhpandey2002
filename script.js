@@ -1,38 +1,37 @@
-class Animal {
-	constructor (species){
-		this._species =species
+class Rectangle {
+	constructor(width ,height)
+	{
+		this.width=width;
+		this.height=height;
 	}
 
-	get species(){
-		return this._species;
+	get getWidth()
+	{
+		return this.width;
 	}
-	makeSound(){
-		console.log("The Golden Retriever makes a sound")
+
+	get getHeight()
+	{
+		return this.height;
+	}
+
+	getArea()
+	{
+		return (this.width) * (this.height);
 	}
 }
 
-class Dog extends Animal {
-
-	bark(){
-		console.log("woof")
+class Square extends Rectangle  {
+	constructor(width)
+	{
+		super(width,width);
 	}
-}
-
-class Cat extends Animal {
-  constructor(species) {
-    super(species);
-  }
-
-  purr() {
-    console.log("purr");
-  }
-
-  makeSound() {
-    console.log(`The ${this.species} makes a sound`);
-  }
+	getPerimeter()
+	{
+		return 4*(this.width);
+	}
 }
 
 // Do not change the code below this line
-window.Animal = Animal;
-window.Dog = Dog;
-window.Cat = Cat;
+window.Rectangle = Rectangle;
+window.Square = Square;
